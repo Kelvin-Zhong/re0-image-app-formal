@@ -1,4 +1,5 @@
 from core.user_model import UserBase, UserManagerBase
+from core.photo_model import PhotoBase
 
 
 class UserManager(UserManagerBase):
@@ -6,4 +7,8 @@ class UserManager(UserManagerBase):
 
 
 class User(UserBase):
+    pass
+
+
+class Photo(PhotoBase):
     pass
