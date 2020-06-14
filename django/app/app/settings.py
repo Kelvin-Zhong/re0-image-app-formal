@@ -133,3 +133,5 @@ MEDIA_ROOT = '/vol/web/media'
 
 # Authorization User Model
 AUTH_USER_MODEL = 'core.User'
+
+TOKEN_EXPIRED_AFTER_SECONDS = 86400 * 28
