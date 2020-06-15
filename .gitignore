@@ -132,3 +132,4 @@ tensorflow/haarcascade_frontalface_default.xml
 tensorflow/data_face/*
 tensorflow/data_face_extracted/*
 tensorflow/.ipynb_checkpoints/*
+tensorflow/data_face_training/*
