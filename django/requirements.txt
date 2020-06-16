@@ -2,3 +2,7 @@ Django
 djangorestframework
 psycopg2
 Pillow
+numpy
+tensorflow
+keras
+opencv-python

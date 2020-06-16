@@ -15,5 +15,5 @@ class PhotoSerializer(serializers.ModelSerializer):
             'user',
             'image',
         )
-        read_only_fields = ('id', 'created_time')
+        read_only_fields = ('id', 'created_time', 'facial_expression_type')
         extra_kwargs = {'user': {'read_only': True}}

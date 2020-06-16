@@ -134,3 +134,4 @@ tensorflow/data_face_extracted/*
 tensorflow/.ipynb_checkpoints/*
 tensorflow/data_face_training/*
 tensorflow/output_models/*
+django/app/deeplearning/output_models/*
