@@ -9,8 +9,10 @@
       </swiper-item>
   </swiper>
   <view>
+    <navigator url="../upload/index">
       <button class="button">
           <text class="text">检测表情</text>
       </button>
+    </navigator>
   </view>
 </view>

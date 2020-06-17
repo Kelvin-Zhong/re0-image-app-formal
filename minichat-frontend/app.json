@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/aboutus/index"
+        "pages/aboutus/index",
+        "pages/upload/index"
     ],
     "tabBar": {
         "list": [

@@ -1,0 +1,5 @@
+<!--pages/upload/index.wxml-->
+<view class="upload-box" bindtap="chooseImg">
+    <image mode="aspectFit" class="icon" src="../../images/upload.png"></image>
+    <text>上传图片</text>
+</view>
