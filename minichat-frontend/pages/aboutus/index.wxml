@@ -3,4 +3,11 @@
     <button class="contactus-button" type="primary" open-type='contact' session-from=''>
         联系我们
     </button>
+    <mp-cells ext-class="my-cells" title="带说明的列表项">
+        <mp-cell value="标题文字" footer="说明文字"></mp-cell>
+        <mp-cell>
+            <view>标题文字（使用slot）</view>
+            <view slot="footer">说明文字</view>
+        </mp-cell>
+    </mp-cells>
 </view>
