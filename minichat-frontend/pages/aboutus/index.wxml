@@ -1,0 +1,6 @@
+<!--pages/aboutus/index.wxml-->
+<view>
+    <button class="contactus-button" type="primary" open-type='contact' session-from=''>
+        联系我们
+    </button>
+</view>
