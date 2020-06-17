@@ -1,13 +1,16 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <swiper class="swiper" indicator-dots="true" circular="true" indicator-color="#fcfcfc" indicator-active-color="#a6cffe">
+      <swiper-item>
+          <image mode="aspectFit" src="../../images/image1.jpg" class="img"></image>
+      </swiper-item>
+      <swiper-item>
+          <image mode="aspectFit" src="../../images/image2.jpeg" class="img"></image>
+      </swiper-item>
+  </swiper>
+  <view>
+      <button class="button">
+          <text class="text">检测表情</text>
+      </button>
   </view>
 </view>
