@@ -18,3 +18,15 @@
     height: 74rpx;
     margin: 100rpx auto 20rpx;
 }
+
+.canvas-box {
+    position: relative;
+    width: 800rpx;
+    margin: 60rpx auto;
+    width: 90%;
+}
+
+.canvas-box .picture {
+    height: auto;
+    display: block;
+}

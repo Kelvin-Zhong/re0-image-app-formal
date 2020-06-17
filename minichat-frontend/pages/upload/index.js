@@ -1,11 +1,19 @@
 // pages/upload/index.js
+const EditingStage = {
+    entry: "entry",
+    uploading: "uploading",
+    uploaded: "uploaded",
+    share: "share",
+}
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        stage: EditingStage.entry,
+        imgPath: "",
     },
 
     /**
@@ -66,12 +74,17 @@ Page({
 
     chooseImg() {
         console.log("Enter the function chooseImg");
+        let that = this;
         wx.chooseImage({
             count: 1,
             sizeType: ["original", "compressed"],
             sourceType: ["album", "camera"],
             success(res) {
                 console.log("image choosed: ", res);
+                that.setData({
+                    imgPath: res.tempFilePaths[0],
+                    stage: EditingStage.uploaded,
+                });
             },
         });
     },

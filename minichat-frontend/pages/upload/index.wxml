@@ -1,5 +1,10 @@
 <!--pages/upload/index.wxml-->
-<view class="upload-box" bindtap="chooseImg">
+<view class="upload-box" bindtap="chooseImg" wx:if="{{stage == 'entry'}}">
     <image mode="aspectFit" class="icon" src="../../images/upload.png"></image>
     <text>上传图片</text>
+</view>
+<view wx:if="{{stage == 'uploaded'}}">
+    <view class="canvas-box" id="canvasBox">
+        <image mode="widthFix" class="picture" id="picture" src="{{imgPath}}"></image>
+    </view>
 </view>
