@@ -30,3 +30,18 @@
     height: auto;
     display: block;
 }
+
+.btn-box-save {
+    width: 50%;
+    height: 100rpx;
+    bottom: 20rpx;
+    padding-left: 25%;
+    padding-top: 20rpx;
+}
+
+.btn-box-share {
+    width: 50%;
+    height: 100rpx;
+    padding-left: 25%;
+    padding-top: 20rpx;
+}

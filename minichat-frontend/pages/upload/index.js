@@ -69,7 +69,11 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        console.log("share function demo");
+        return {
+            title: "小程序分享功能演示",
+            path: `/pages/index/index`,
+        };
     },
 
     chooseImg() {
@@ -84,6 +88,26 @@ Page({
                 that.setData({
                     imgPath: res.tempFilePaths[0],
                     stage: EditingStage.uploaded,
+                });
+            },
+        });
+    },
+
+    // 保存到相册
+    saveImg() {
+        let imgPath = this.data.imgPath;
+        wx.saveImageToPhotosAlbum({
+            filePath: imgPath,
+            success(res) {
+                console.log("save image success! ", res);
+                wx.showToast({
+                    title: "保存成功",
+                });
+            },
+            fail(err) {
+                console.log(err);
+                wx.showToast({
+                    title: "保存失败",
                 });
             },
         });

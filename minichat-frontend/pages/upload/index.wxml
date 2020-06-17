@@ -7,4 +7,10 @@
     <view class="canvas-box" id="canvasBox">
         <image mode="widthFix" class="picture" id="picture" src="{{imgPath}}"></image>
     </view>
+    <view class="btn-box-save">
+        <button type="primary" hover-class="none" bindtap="saveImg">保存</button>
+    </view>
+    <view class="btn-box-share">
+        <button type="primary" hover-class="none" open-type="share">分享</button>
+    </view>
 </view>
