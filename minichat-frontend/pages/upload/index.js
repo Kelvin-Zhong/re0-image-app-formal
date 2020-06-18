@@ -1,6 +1,6 @@
 // pages/upload/index.js
 
-import { uploadPhoto } from "../../apis/PHOTO_API.js";
+import { uploadPhoto, downloadProcessedPhoto } from "../../apis/PHOTO_API.js";
 
 const EditingStage = {
     entry: "entry",
@@ -95,11 +95,22 @@ Page({
                 uploadPhoto(imgPath, app.globalData.userToken).then((res) => {
                     console.log("finish uploadPhoto");
                     console.log(res);
-                });
 
-                that.setData({
-                    imgPath: res.tempFilePaths[0],
-                    stage: EditingStage.uploaded,
+                    let data = res.data;
+                    data = JSON.parse(data);
+                    console.log("data from uploading", data);
+
+                    let img_url = data.image;
+                    downloadProcessedPhoto(img_url).then((res) => {
+                        console.log("finish downloaded processed image");
+                        console.log(res);
+
+                        // Send the image to canvas component
+                        that.setData({
+                            imgPath: res.tempFilePath,
+                            stage: EditingStage.uploaded,
+                        });
+                    });
                 });
             },
         });
