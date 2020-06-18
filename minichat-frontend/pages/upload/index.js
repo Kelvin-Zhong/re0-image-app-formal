@@ -89,31 +89,38 @@ Page({
             sizeType: ["original", "compressed"],
             sourceType: ["album", "camera"],
             success(res) {
-                console.log("image choosed: ", res);
-
                 let imgPath = res.tempFilePaths[0];
-                uploadPhoto(imgPath, app.globalData.userToken).then((res) => {
-                    console.log("finish uploadPhoto");
-                    console.log(res);
-
-                    let data = res.data;
-                    data = JSON.parse(data);
-                    console.log("data from uploading", data);
-
-                    let img_url = data.image;
-                    downloadProcessedPhoto(img_url).then((res) => {
-                        console.log("finish downloaded processed image");
-                        console.log(res);
-
-                        // Send the image to canvas component
-                        that.setData({
-                            imgPath: res.tempFilePath,
-                            stage: EditingStage.uploaded,
-                        });
-                    });
-                });
+                that.uploadPhotoRequest(imgPath);
             },
         });
+    },
+
+    uploadPhotoRequest: async function (imgPath) {
+        wx.showLoading({
+            icon: "loading",
+            title: "正在加载中...",
+            mask: true,
+        });
+
+        console.log("image choosed: ", res);
+
+        let res = await uploadPhoto(imgPath, app.globalData.userToken);
+        let data = res.data;
+        data = JSON.parse(data);
+        console.log("data from uploading", data);
+
+        let img_url = data.image;
+        res = await downloadProcessedPhoto(img_url);
+
+        console.log("finish downloaded processed image");
+        console.log(res);
+
+        // Send the image to canvas component
+        this.setData({
+            imgPath: res.tempFilePath,
+            stage: EditingStage.uploaded,
+        });
+        wx.hideLoading();
     },
 
     // 保存到相册
