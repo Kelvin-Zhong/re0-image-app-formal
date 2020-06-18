@@ -1,10 +1,15 @@
 // pages/upload/index.js
+
+import { uploadPhoto } from "../../apis/PHOTO_API.js";
+
 const EditingStage = {
     entry: "entry",
     uploading: "uploading",
     uploaded: "uploaded",
     share: "share",
 }
+
+const app = getApp();
 
 Page({
 
@@ -85,6 +90,13 @@ Page({
             sourceType: ["album", "camera"],
             success(res) {
                 console.log("image choosed: ", res);
+
+                let imgPath = res.tempFilePaths[0];
+                uploadPhoto(imgPath, app.globalData.userToken).then((res) => {
+                    console.log("finish uploadPhoto");
+                    console.log(res);
+                });
+
                 that.setData({
                     imgPath: res.tempFilePaths[0],
                     stage: EditingStage.uploaded,
